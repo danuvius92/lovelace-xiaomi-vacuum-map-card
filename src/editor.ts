@@ -80,40 +80,40 @@ export class XiaomiVacuumMapCardEditor extends LitElement implements LovelaceCar
                         @value-changed=${this._titleChanged}></paper-input>
                 </div>
                 <div class="values">
-                    <paper-dropdown-menu
+                    <mwc-select
                         label=${this._localize("editor.label.entity")}
                         @value-changed=${this._entityChanged}
                         .configValue=${"entity"}>
-                        <paper-listbox slot="dropdown-content" .selected=${vacuums.indexOf(this._entity)}>
+                        <mwc-list-item slot="dropdown-content" .selected=${vacuums.indexOf(this._entity)}>
                             ${vacuums.map(entity => {
                                 return html` <paper-item>${entity}</paper-item> `;
                             })}
-                        </paper-listbox>
-                    </paper-dropdown-menu>
+                        </mwc-list-item>
+                    </mwc-select>
                 </div>
                 <div class="values">
-                    <paper-dropdown-menu
+                    <mwc-select
                         label=${this._localize("editor.label.vacuum_platform")}
                         @value-changed=${this._entityChanged}
                         .configValue=${"vacuum_platform"}>
-                        <paper-listbox slot="dropdown-content" .selected=${platforms.indexOf(this._vacuum_platform)}>
+                        <mwc-list-item slot="dropdown-content" .selected=${platforms.indexOf(this._vacuum_platform)}>
                             ${platforms.map(platform => {
                                 return html` <paper-item>${platform}</paper-item> `;
                             })}
-                        </paper-listbox>
-                    </paper-dropdown-menu>
+                        </mwc-list-item>
+                    </mwc-select>
                 </div>
                 <div class="values">
-                    <paper-dropdown-menu
+                    <mwc-select
                         label=${this._localize("editor.label.camera")}
                         @value-changed=${this._cameraChanged}
                         .configValue=${"camera"}>
-                        <paper-listbox slot="dropdown-content" .selected=${cameras.indexOf(this._camera)}>
+                        <mwc-list-item slot="dropdown-content" .selected=${cameras.indexOf(this._camera)}>
                             ${cameras.map(entity => {
                                 return html` <paper-item>${entity}</paper-item> `;
                             })}
-                        </paper-listbox>
-                    </paper-dropdown-menu>
+                        </mwc-list-item>
+                    </mwc-select>
                 </div>
                 <div class="values">
                     <ha-formfield .label=${this._localize("editor.label.map_locked")}>
